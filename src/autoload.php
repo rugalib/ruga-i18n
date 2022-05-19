@@ -11,5 +11,5 @@
 function __(string $message): string
 {
     return $message;
-//    return \Rrlib\I18n\Facade\Localization::getTranslator()->translate($message);
+//    return \Ruga\I18n\Facade\Localization::getTranslator()->translate($message);
 }
