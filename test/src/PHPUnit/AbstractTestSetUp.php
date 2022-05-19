@@ -2,7 +2,7 @@
 /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
 declare(strict_types=1);
 
-namespace Ruga\Skeleton\Test\PHPUnit;
+namespace Ruga\I18n\Test\PHPUnit;
 
 use Laminas\ServiceManager\ServiceManager;
 use Laminas\ConfigAggregator\ConfigAggregator;
@@ -55,6 +55,7 @@ abstract class AbstractTestSetUp extends TestCase
     {
         $config = new ConfigAggregator(
             [
+                (new \Ruga\I18n\ConfigProvider)(),
                 new PhpFileProvider(__DIR__ . "/../../config/config.php"),
                 new PhpFileProvider(__DIR__ . "/../../config/config.local.php"),
             ], null, []

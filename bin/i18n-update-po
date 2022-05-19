@@ -1,0 +1,43 @@
+#!/usr/bin/env php
+<?php
+declare(strict_types=1);
+
+/**
+ * @internal not tested
+ */
+
+// Setup/verify autoloading
+if (file_exists($a = __DIR__ . '/../../../autoload.php')) {
+    require $a;
+} elseif (file_exists($a = __DIR__ . '/../vendor/autoload.php')) {
+    require $a;
+} elseif (file_exists($a = __DIR__ . '/../autoload.php')) {
+    require $a;
+} else {
+    fwrite(STDERR, 'Cannot locate autoloader; please run "composer install"' . PHP_EOL);
+    exit(1);
+}
+
+//chdir(dirname(__DIR__));
+//require __DIR__ . '/../vendor/autoload.php';
+
+/**
+ * Self-called anonymous function that creates its own scope and keeps the global namespace clean.
+ */
+(function () use ($argv) {
+    /** @var \Psr\Container\ContainerInterface $container */
+    $container = require getcwd() . '/config/container.php';
+    
+    \Ruga\Log::log_msg('===[ NEW REQUEST ]==================================================');
+    \Ruga\Log::log_msg("REQUEST_URI='{$_SERVER['REQUEST_URI']}' | REQUEST_METHOD='{$_SERVER['REQUEST_METHOD']}'");
+    
+    /** @var \Symfony\Component\Console\Command\Command $command */
+    $command = $container->get(\Ruga\I18n\Command\UpdatePoCommand::class);
+    $output = new \Symfony\Component\Console\Output\ConsoleOutput();
+    $command->run(new \Symfony\Component\Console\Input\ArgvInput($argv), $output);
+})();
+
+
+//$config = require realpath(__DIR__) . '/../var/config.php';
+//$command = new \Ruga\I18n\Command\UpdatePotCommand();
+//exit($command(array_slice($argv, 1)));
