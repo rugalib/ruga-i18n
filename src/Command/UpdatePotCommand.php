@@ -37,7 +37,7 @@ class UpdatePotCommand extends Command
         }
         
         $output->writeln("Creating POT file \"{$gettext_pot}\"");
-        $cmd = "c:/bin/gettext/bin/xgettext --no-wrap --files-from=\"{$tmpfile}\" --language=PHP --keyword=_ --keyword=__ --keyword=translate --from-code=\"UTF-8\" --add-location --output=\"{$gettext_pot}\"";
+        $cmd = "c:/bin/gettext/bin/xgettext --no-wrap --files-from=\"{$tmpfile}\" --language=PHP --keyword=_ --keyword=__ --keyword=translate --keyword=\"translatePlural:1,2\" --from-code=\"UTF-8\" --add-location --output=\"{$gettext_pot}\"";
         exec($cmd);
         
         return Command::SUCCESS;

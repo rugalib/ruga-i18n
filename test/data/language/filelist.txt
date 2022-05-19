@@ -1,0 +1,4 @@
+../../src\Iso3166Test.php
+../../src\Iso639Test.php
+../../src\PHPUnit\AbstractTestSetUp.php
+../../src\TranslatorTest.php

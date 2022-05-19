@@ -1,0 +1,28 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-19 17:28+0200\n"
+"PO-Revision-Date: 2022-05-19 17:31+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.4.2\n"
+"Last-Translator: \n"
+"Language: it\n"
+
+#: ../../src\TranslatorTest.php:37 ../../src\TranslatorTest.php:41
+#: ../../src\TranslatorTest.php:52 ../../src\TranslatorTest.php:56
+#: ../../src\TranslatorTest.php:60 ../../src\TranslatorTest.php:65
+#: ../../src\TranslatorTest.php:69 ../../src\TranslatorTest.php:73
+msgid "Fahrzeug"
+msgid_plural "Fahrzeuge"
+msgstr[0] "Veicolo"
+msgstr[1] "veicoli"

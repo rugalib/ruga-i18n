@@ -55,7 +55,8 @@ abstract class AbstractTestSetUp extends TestCase
     {
         $config = new ConfigAggregator(
             [
-                (new \Ruga\I18n\ConfigProvider)(),
+                new \Laminas\I18n\ConfigProvider(),
+                new \Ruga\I18n\ConfigProvider(),
                 new PhpFileProvider(__DIR__ . "/../../config/config.php"),
                 new PhpFileProvider(__DIR__ . "/../../config/config.local.php"),
             ], null, []

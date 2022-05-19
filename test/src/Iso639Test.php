@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Ruga\I18n\Test;
 
-use Laminas\ServiceManager\ServiceManager;
 use Ruga\I18n\Iso639\Key;
 use Ruga\I18n\Iso639\Name;
 
