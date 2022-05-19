@@ -1,6 +1,6 @@
 {
-  "name": "rugalib/ruga-skeleton",
-  "description": "Template for rugalib components",
+  "name": "rugalib/ruga-i18n",
+  "description": "Internationalization ISO3166 and ISO639",
   "license": "BSD-3-Clause",
   "homepage": "https://github.com/rugalib",
   "type": "library",
@@ -13,7 +13,8 @@
     "laminas/laminas-servicemanager": "^3"
   },
   "repositories": [
-    {"type": "vcs", "url": "https://github.com/rugalib/ruga-std.git"}
+    {"type": "vcs", "url": "https://github.com/rugalib/ruga-std.git"},
+    {"type": "vcs", "url": "https://github.com/rugalib/ruga-log.git"}
   ],
   "authors": [
     {
@@ -23,18 +24,18 @@
   ],
   "autoload": {
     "psr-4": {
-      "Ruga\\Skeleton\\": "src/"
+      "Ruga\\I18n\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Ruga\\Skeleton\\Test\\": "test/src"
+      "Ruga\\I18n\\Test\\": "test/src"
     }
   },
   "extra": {
     "laminas": {
-      "component": "Ruga\\Skeleton",
-      "config-provider": "Ruga\\Skeleton\\ConfigProvider"
+      "component": "Ruga\\I18n",
+      "config-provider": "Ruga\\I18n\\ConfigProvider"
     }
   }
 }
