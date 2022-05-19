@@ -25,7 +25,8 @@
   "autoload": {
     "psr-4": {
       "Ruga\\I18n\\": "src/"
-    }
+    },
+    "files": ["src/autoload.php"]
   },
   "autoload-dev": {
     "psr-4": {
