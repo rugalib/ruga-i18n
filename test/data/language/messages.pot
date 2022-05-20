@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-19 17:28+0200\n"
+"POT-Creation-Date: 2022-05-20 13:28+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: ../../src\TranslatorTest.php:37 ../../src\TranslatorTest.php:41
-#: ../../src\TranslatorTest.php:52 ../../src\TranslatorTest.php:56
-#: ../../src\TranslatorTest.php:60 ../../src\TranslatorTest.php:65
-#: ../../src\TranslatorTest.php:69 ../../src\TranslatorTest.php:73
+#: ../../src\TranslatorTest.php:33 ../../src\TranslatorTest.php:37
 msgid "Fahrzeug"
-msgid_plural "Fahrzeuge"
+msgstr ""
+
+#: ../../src\TranslatorTest.php:48 ../../src\TranslatorTest.php:53
+#: ../../src\TranslatorTest.php:58 ../../src\TranslatorTest.php:64
+#: ../../src\TranslatorTest.php:69 ../../src\TranslatorTest.php:74
+#, php-format
+msgid "%s Fahrzeug"
+msgid_plural "%s Fahrzeuge"
 msgstr[0] ""
 msgstr[1] ""

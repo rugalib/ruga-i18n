@@ -10,6 +10,6 @@
  */
 function __(string $message): string
 {
-    return $message;
-//    return \Ruga\I18n\Facade\Localization::getTranslator()->translate($message);
+//    return $message;
+    return \Ruga\I18n\Facade\Localization::getTranslator()->translate($message);
 }

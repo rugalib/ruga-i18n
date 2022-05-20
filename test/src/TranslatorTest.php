@@ -8,6 +8,7 @@ use Laminas\I18n\Translator\Translator;
 use Laminas\I18n\Translator\TranslatorInterface;
 use Ruga\I18n\Localization;
 use Ruga\I18n\LocalizationInterface;
+use Ruga\Std\Facade\AbstractFacade;
 
 /**
  * @author                 Roland Rusch, easy-smart solution GmbH <roland.rusch@easy-smart.ch>
@@ -35,8 +36,8 @@ class TranslatorTest extends \Ruga\I18n\Test\PHPUnit\AbstractTestSetUp
         $this->assertEquals('Fahrzeug', $s);
         
         $s = $t->translate('Fahrzeug', 'default', 'ita');
-        echo $s . PHP_EOL;
-        $this->assertEquals('Veicolo', $s);
+        echo "{$s}" . PHP_EOL;
+        $this->assertEquals('veicolo', $s);
     }
     
     
@@ -45,31 +46,52 @@ class TranslatorTest extends \Ruga\I18n\Test\PHPUnit\AbstractTestSetUp
     {
         $t = $this->getContainer()->get(TranslatorInterface::class);
         $this->assertInstanceOf(Translator::class, $t);
-        $s = $t->translatePlural('Fahrzeug', 'Fahrzeuge', 0);
+        $s = $t->translatePlural('%s Fahrzeug', '%s Fahrzeuge', 0);
+        $s = sprintf($s, 0);
         echo $s . PHP_EOL;
-        $this->assertEquals('Fahrzeuge', $s);
+        $this->assertEquals('0 Fahrzeuge', $s);
         
-        $s = $t->translatePlural('Fahrzeug', 'Fahrzeuge', 1);
+        $s = $t->translatePlural('%s Fahrzeug', '%s Fahrzeuge', 1);
+        $s = sprintf($s, 1);
         echo $s . PHP_EOL;
-        $this->assertEquals('Fahrzeug', $s);
+        $this->assertEquals('1 Fahrzeug', $s);
         
-        $s = $t->translatePlural('Fahrzeug', 'Fahrzeuge', 2);
+        $s = $t->translatePlural('%s Fahrzeug', '%s Fahrzeuge', 2);
+        $s = sprintf($s, 2);
         echo $s . PHP_EOL;
-        $this->assertEquals('Fahrzeuge', $s);
+        $this->assertEquals('2 Fahrzeuge', $s);
         
         
-        $s = $t->translatePlural('Fahrzeug', 'Fahrzeuge', 0, 'default', 'fra');
+        $s = $t->translatePlural('%s Fahrzeug', '%s Fahrzeuge', 0, 'default', 'fra');
+        $s = sprintf($s, 0);
         echo $s . PHP_EOL;
-        $this->assertEquals("véhicule", $s);
+        $this->assertEquals("0 véhicule", $s);
         
-        $s = $t->translatePlural('Fahrzeug', 'Fahrzeuge', 1, 'default', 'fra');
+        $s = $t->translatePlural('%s Fahrzeug', '%s Fahrzeuge', 1, 'default', 'fra');
+        $s = sprintf($s, 1);
         echo $s . PHP_EOL;
-        $this->assertEquals("véhicule", $s);
+        $this->assertEquals("1 véhicule", $s);
         
-        $s = $t->translatePlural('Fahrzeug', 'Fahrzeuge', 2, 'default', 'fra');
+        $s = $t->translatePlural('%s Fahrzeug', '%s Fahrzeuge', 2, 'default', 'fra');
+        $s = sprintf($s, 2);
         echo $s . PHP_EOL;
-        $this->assertEquals("véhicules", $s);
+        $this->assertEquals("2 véhicules", $s);
     }
     
+    
+    
+    public function testCanTransleWithGlobalShort(): void
+    {
+        AbstractFacade::setController($this->getContainer());
+        $t = $this->getContainer()->get(TranslatorInterface::class);
+        $this->assertInstanceOf(Translator::class, $t);
+        
+        echo ($s = __('Fahrzeug')) . PHP_EOL;
+        $this->assertEquals('Fahrzeug', $s);
+        
+        $t->setLocale('ita');
+        echo ($s = __('Fahrzeug')) . PHP_EOL;
+        $this->assertEquals('veicolo', $s);
+    }
     
 }

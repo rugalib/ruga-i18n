@@ -7,22 +7,26 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-19 17:28+0200\n"
-"PO-Revision-Date: 2022-05-19 17:31+0200\n"
+"POT-Creation-Date: 2022-05-20 13:28+0200\n"
+"PO-Revision-Date: 2022-05-20 13:36+0200\n"
+"Last-Translator: \n"
 "Language-Team: \n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.4.2\n"
-"Last-Translator: \n"
-"Language: it\n"
 
-#: ../../src\TranslatorTest.php:37 ../../src\TranslatorTest.php:41
-#: ../../src\TranslatorTest.php:52 ../../src\TranslatorTest.php:56
-#: ../../src\TranslatorTest.php:60 ../../src\TranslatorTest.php:65
-#: ../../src\TranslatorTest.php:69 ../../src\TranslatorTest.php:73
+#: ../../src\TranslatorTest.php:33 ../../src\TranslatorTest.php:37
 msgid "Fahrzeug"
-msgid_plural "Fahrzeuge"
-msgstr[0] "Veicolo"
-msgstr[1] "veicoli"
+msgstr "veicolo"
+
+#: ../../src\TranslatorTest.php:48 ../../src\TranslatorTest.php:53
+#: ../../src\TranslatorTest.php:58 ../../src\TranslatorTest.php:64
+#: ../../src\TranslatorTest.php:69 ../../src\TranslatorTest.php:74
+#, php-format
+msgid "%s Fahrzeug"
+msgid_plural "%s Fahrzeuge"
+msgstr[0] "%s veicolo"
+msgstr[1] "%s veicoli"
