@@ -1,7 +1,7 @@
 {
   "name": "rugalib/ruga-i18n",
   "description": "Internationalization ISO3166 and ISO639",
-  "license": "BSD-3-Clause",
+  "license": "AGPL-3.0-only",
   "homepage": "https://github.com/rugalib",
   "type": "library",
   "require": {
