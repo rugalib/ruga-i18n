@@ -37,8 +37,9 @@ trait ArrayAccessTrait
      *
      * @param string $offset
      *
-     * @return array
+     * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset): array
     {
         return $this->DataProvider_DATA[$offset];
@@ -53,7 +54,7 @@ trait ArrayAccessTrait
      * @param string $offset
      * @param array  $value
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
 // $this->DataProvider_DATA[$offset]=$value;
     }
@@ -66,7 +67,7 @@ trait ArrayAccessTrait
      *
      * @param string $offset
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
 // unset($this->DataProvider_DATA[$offset]);
     }
