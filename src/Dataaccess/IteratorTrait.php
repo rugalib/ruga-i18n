@@ -39,6 +39,7 @@ trait IteratorTrait
      *
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function current()
     {
         return $this->valid() ? $this->DataProvider_DATA[$this->key()] : null;
@@ -50,7 +51,9 @@ trait IteratorTrait
      * Return the key of the current element.
      *
      * @return mixed
+     *
      */
+    #[\ReturnTypeWillChange]
     public function key()
     {
         return static::valid() ? $this->IteratorTrait_keys[$this->IteratorTrait_index] : null;
@@ -60,16 +63,13 @@ trait IteratorTrait
     
     /**
      * Move forward to next element.
-     *
-     * @return bool false if invalid
      */
-    public function next()
+    public function next(): void
     {
         $this->IteratorTrait_index++;
         if (!$this->valid()) {
             $this->IteratorTrait_index = null;
         }
-        return $this->valid();
     }
     
     
@@ -77,7 +77,7 @@ trait IteratorTrait
     /**
      * Rewind the Iterator to the first element.
      */
-    public function rewind()
+    public function rewind(): void
     {
         $this->IteratorTrait_keys = array_keys($this->DataProvider_DATA);
         sort($this->IteratorTrait_keys);
